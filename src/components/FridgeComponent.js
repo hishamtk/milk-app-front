@@ -54,10 +54,15 @@ function FridgeComponent(props) {
     <div className="flex flex-row p-10 m-2 sm:m-10 justify-center align-center bg-blue-300 rounded-lg w-full">
       <div className="flex flex-col">
         <div className="flex flex-col">
-          <h2 className="text-3xl sm:text-3xl pb-5 text-blueGray-100 font-bold">
-            <i class="fa-solid fa-box-archive" /> Fridge Stock
+          <h2
+            className={
+              "text-3xl sm:text-3xl pb-2 font-bold " +
+              (props.fridgeStock > 500 ? "text-green-700" : "text-red-700")
+            }
+          >
+            <i className="fa-solid fa-box-archive" /> Fridge Stock
           </h2>
-          <h4 className="text-md md:text-3xl pb-10 font-semibold">
+                  <h4 className={"text-md md:text-3xl pb-10 font-semibold " + (props.fridgeStock > 500 ? "text-green-700" : "text-red-700")}>
             {props.fridgeStock} ml
           </h4>
 
@@ -109,9 +114,8 @@ function FridgeComponent(props) {
           {showSubField && (
             <form onSubmit={handleSubSubmit} className="mb-5">
               <div className="mb-3 pt-0">
-                              <input
+                <input
                   onChange={handleChangeNurse}
-                                  
                   type="text"
                   placeholder="Name"
                   className="px-2 py-1 placeholder-slate-400 text-slate-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"
@@ -159,9 +163,8 @@ function FridgeComponent(props) {
           {showTransField && (
             <form onSubmit={handleTransfSubmit} className="mb-5">
               <div className="mb-3 pt-0">
-                              <input
+                <input
                   onChange={handleChangeNurse}
-                                  
                   type="text"
                   placeholder="Name"
                   className="px-2 py-1 placeholder-slate-300 text-slate-600 relative bg-white  rounded text-sm border-0 shadow outline-none focus:outline-none focus:ring w-full"

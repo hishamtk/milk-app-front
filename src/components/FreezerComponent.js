@@ -33,7 +33,7 @@ function FreezerComponent(props) {
 
         <div className="flex flex-col">
           <div className="flex flex-col">
-            <h2 className="text-3xl sm:text-3xl pb-5 text-blueGray-100 font-bold">
+            <h2 className="text-3xl sm:text-3xl pb-2 text-blueGray-100 font-bold">
               <i className="fa-solid fa-snowflake text-gray-800" /> Freezer
               Stock
             </h2>
