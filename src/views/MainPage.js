@@ -66,7 +66,8 @@ function MainPage() {
     }
     setFreezerStock(freezerStock + Number(x));
     setFridgeStock(fridgeStock - Number(x));
-    setNurse(user)
+      setNurse(user)
+      setTransferType(3)
   };
 
   const updateStock = async (user) => {
@@ -76,7 +77,8 @@ function MainPage() {
         fridge: fridgeStock,
         stockDate: moment().format("YYYY-MM-DD"),
         unit: "ml",
-        nurse:user,
+          nurse: user,
+        transferType
       };
       await axios.post(`${process.env.REACT_APP_APIURL}/milk`, data);
     } catch (error) {
